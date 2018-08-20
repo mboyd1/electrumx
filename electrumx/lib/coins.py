@@ -624,7 +624,26 @@ class Litecoin(Coin):
         'eywr5eubdbbe2laq.onion s50008 t50007',
     ]
 
+class Doriancoin(Coin):
+    NAME = "Doriancoin"
+    SHORTNAME = "DRC"
+    NET = "mainnet"
+    XPUB_VERBYTES = bytes.fromhex("0488b21e")
+    XPRV_VERBYTES = bytes.fromhex("0488ade4")
+    P2PKH_VERBYTE = bytes.fromhex("1E") 
+    P2SH_VERBYTES = [bytes.fromhex("1c"), bytes.fromhex("05")] 
+    WIF_BYTE = bytes.fromhex("b0") 
+    GENESIS_HASH = ('d21da25e277bd20b7456087d69c5fee2'
+                    'ebc6091b410271b5cb0623c7d1e7d1b9')
+    DESERIALIZER = lib_tx.DeserializerSegWit
+    TX_COUNT = 307922
+    TX_COUNT_HEIGHT = 306537
+    TX_PER_BLOCK = 1
+    RPC_PORT = 1948
+    REORG_LIMIT = 800
+    PEERS = []
 
+    
 class LitecoinTestnet(Litecoin):
     SHORTNAME = "XLT"
     NET = "testnet"
